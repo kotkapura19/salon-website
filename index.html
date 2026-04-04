@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Ladies Salon</title>
+<title>Luxury Ladies Salon</title>
 
 <style>
 body{
@@ -12,24 +12,23 @@ font-family:'Segoe UI',sans-serif;
 background:#fff0f5;
 }
 
-/* Navbar */
+/* NAVBAR */
 nav{
 background:#d63384;
-padding:15px;
+padding:12px;
 text-align:center;
 position:sticky;
 top:0;
-z-index:1000;
 }
 
 nav a{
 color:white;
-margin:0 15px;
+margin:8px;
 text-decoration:none;
-font-weight:bold;
+font-size:14px;
 }
 
-/* Hero */
+/* HERO */
 .hero{
 background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
@@ -37,95 +36,88 @@ background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:120px 20px;
-animation:fadeIn 2s ease;
+padding:80px 15px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:28px;
 }
 
 .hero button{
 background:#ff69b4;
 border:none;
-padding:12px 25px;
+padding:10px 20px;
 color:white;
-border-radius:25px;
-cursor:pointer;
+border-radius:20px;
 }
 
-/* Sections */
+/* SECTION */
 .section{
-padding:60px 20px;
+padding:40px 15px;
 text-align:center;
 }
 
-/* Services */
+/* SERVICES */
 .services{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-width:250px;
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-}
-
-/* Gallery */
-.gallery{
 display:flex;
 flex-wrap:wrap;
 gap:15px;
 justify-content:center;
 }
 
+.card{
+background:white;
+padding:15px;
+width:45%;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
 .gallery img{
-width:300px;
-height:300px;
-object-fit:cover;
-border-radius:12px;
-transition:0.3s;
+width:100%;
+border-radius:10px;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
+/* FORM */
+form input, form textarea{
+width:90%;
+padding:10px;
+margin:10px;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
-/* Footer */
+/* FOOTER */
 footer{
 background:#d63384;
 color:white;
 text-align:center;
-padding:20px;
+padding:15px;
 }
 
-/* WhatsApp */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
+bottom:15px;
+right:15px;
 background:#25D366;
 color:white;
-padding:15px;
+padding:12px;
 border-radius:50%;
-text-decoration:none;
-font-size:20px;
 }
 
-/* Animation */
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+/* DESKTOP */
+@media(min-width:768px){
+.hero h1{font-size:40px;}
+.card{width:250px;}
+.gallery{grid-template-columns:repeat(3,1fr);}
 }
 </style>
 </head>
@@ -140,25 +132,23 @@ to{opacity:1;}
 </nav>
 
 <div class="hero">
-<h1>Royal Ladies Salon</h1>
-<p>Where Beauty Meets Elegance 💖</p>
-<button onclick="window.location.href='https://wa.me/919876543210'">Book Appointment</button>
+<h1>Luxury Ladies Salon</h1>
+<p>Beauty • Elegance • Confidence 💖</p>
+<button onclick="window.location.href='https://wa.me/919876543210'">Book Now</button>
 </div>
 
 <div id="services" class="section">
 <h2>Our Services</h2>
-
 <div class="services">
-<div class="card">Hair Cut & Styling</div>
-<div class="card">Facial & Skin Care</div>
+<div class="card">Hair Styling</div>
+<div class="card">Facial</div>
 <div class="card">Bridal Makeup</div>
-<div class="card">Manicure & Pedicure</div>
+<div class="card">Manicure</div>
 </div>
 </div>
 
 <div id="gallery" class="section">
 <h2>Our Work</h2>
-
 <div class="gallery">
 <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
 <img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4">
@@ -166,17 +156,46 @@ to{opacity:1;}
 </div>
 </div>
 
+<div class="section">
+<h2>Book Appointment</h2>
+
+<form onsubmit="sendToWhatsApp(); return false;">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="service" placeholder="Service" required>
+<textarea id="msg" placeholder="Message"></textarea>
+<button type="submit">Send</button>
+</form>
+
+</div>
+
 <div id="contact" class="section">
-<h2>Contact Us</h2>
+<h2>Contact</h2>
 <p>📞 +91 98765 43210</p>
 <p>📍 Your Salon Address</p>
+
+<iframe src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="90%" height="200"></iframe>
+
 </div>
 
 <a class="whatsapp" href="https://wa.me/919876543210">💬</a>
 
 <footer>
-© 2026 Royal Ladies Salon
+© 2026 Luxury Ladies Salon
 </footer>
+
+<script>
+function sendToWhatsApp(){
+var name=document.getElementById("name").value;
+var service=document.getElementById("service").value;
+var msg=document.getElementById("msg").value;
+
+var url="https://wa.me/919876543210?text="
++"Name: "+name+"%0aService: "+service+"%0aMessage: "+msg;
+
+window.open(url,'_blank');
+}
+</script>
 
 </body>
 </html>
