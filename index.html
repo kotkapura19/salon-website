@@ -1,201 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Trending Beauty Salon</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Ladies Boutique Website</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+  </head>
+  <body>
+   
+import { Crown, Sparkles, ShoppingBag, Scissors, Award, Star, Phone, MapPin, Gift } from 'lucide-react';
+import BookingForm from './components/BookingForm';
 
-<style>
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#fff0f5;
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <nav className="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Crown className="text-rose-500" size={32} />
+            <span className="text-2xl font-bold bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">
+              Royal Ladies Boutique
+            </span>
+          </div>
+          <div className="hidden md:flex gap-8">
+            <a href="#about" className="text-gray-700 hover:text-rose-500 transition">About</a>
+            <a href="#collection" className="text-gray-700 hover:text-rose-500 transition">Collection</a>
+            <a href="#gallery" className="text-gray-700 hover:text-rose-500 transition">Gallery</a>
+            <a href="#booking" className="text-gray-700 hover:text-rose-500 transition">Book Now</a>
+            <a href="#contact" className="text-gray-700 hover:text-rose-500 transition">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-rose-50 via-pink-50 to-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Crown className="text-rose-500" size={48} />
+            <Sparkles className="text-pink-500" size={32} />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-rose-600 via-pink-500 to-rose-400 bg-clip-text text-transparent">
+            Royal Ladies Boutique
+          </h1>
+          <p className="text-2xl md:text-3xl text-gray-700 mb-4 font-light">
+            Where Style Meets Elegance
+          </p>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Discover the latest trends in ethnic & modern fashion designed especially for confident women.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#booking"
+              className="bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:from-rose-600 hover:to-pink-600 transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              Shop Now
+            </a>
+            <a
+              href="#collection"
+              className="bg-white text-rose-500 px-8 py-4 rounded-full font-semibold border-2 border-rose-500 hover:bg-rose-50 transition duration-300"
+            >
+              Explore Collection
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">About Us</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-8"></div>
+          </div>
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Royal Ladies Boutique is a premium fashion destination for women who love elegance, style, and uniqueness.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We specialize in designer suits, bridal wear, and custom stitching tailored to perfection.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Our goal is to provide high-quality fabrics, modern designs, and a luxurious shopping experience.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="collection" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-rose-50 to-pink-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Our Collection</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-8"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <ShoppingBag className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Ethnic Wear</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Punjabi Suits
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Anarkali Dresses
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Patiala Suits
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Crown className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Bridal Collection</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Bridal Lehengas
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Designer Suits
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Wedding Special Dresses
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                <Scissors className="text-white" size={32} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Custom Stitching</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Perfect fitting
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Latest designs
+                </li>
+                <li className="flex items-center gap-2">
+                  <Star size={16} className="text-rose-500" />
+                  Personalized styling
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Why Choose Us</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-8"></div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { icon: Award, text: 'Premium Quality Fabrics' },
+              { icon: Sparkles, text: 'Latest Fashion Designs' },
+              { icon: Scissors, text: 'Custom Stitching Available' },
+              { icon: Gift, text: 'Affordable Luxury' },
+              { icon: Star, text: 'Trusted by Customers' },
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-4 p-6 rounded-xl bg-gradient-to-br from-rose-50 to-pink-50 hover:shadow-lg transition duration-300">
+                <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                  <item.icon className="text-white" size={24} />
+                </div>
+                <p className="text-gray-800 font-semibold">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-rose-50 to-pink-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Gallery</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-8"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: 'Bridal Outfits', url: 'https://images.pexels.com/photos/1043473/pexels-photo-1043473.jpeg?auto=compress&cs=tinysrgb&w=800' },
+              { title: 'Designer Suits', url: 'https://images.pexels.com/photos/1927603/pexels-photo-1927603.jpeg?auto=compress&cs=tinysrgb&w=800' },
+              { title: 'Latest Collections', url: 'https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800' },
+            ].map((item, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition duration-300">
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-80 object-cover group-hover:scale-110 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
+                  <h3 className="text-white text-2xl font-bold">{item.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="booking" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Book Your Order</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-4"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Share your requirements and we'll get back to you with the perfect design for your special occasion.
+            </p>
+          </div>
+          <BookingForm />
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-rose-500 to-pink-500 text-white">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Special Offers</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <Gift size={48} className="mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Festive Discount</h3>
+              <p className="text-white/90">Special discounts available on festive collections</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <Crown size={48} className="mx-auto mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Bridal Package Offers</h3>
+              <p className="text-white/90">Exclusive packages for complete bridal styling</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">Contact Us</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-pink-500 mx-auto mb-8"></div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-md">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">
+                <Phone className="text-white" size={24} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Phone</h3>
+                <p className="text-gray-600">+91 XXXXX XXXXX</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-md">
+              <div className="bg-gradient-to-br from-rose-500 to-pink-500 w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0">
+                <MapPin className="text-white" size={24} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-800 mb-1">Address</h3>
+                <p className="text-gray-600">Your Boutique Address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Crown className="text-rose-400" size={32} />
+              <span className="text-2xl font-bold">Royal Ladies Boutique</span>
+            </div>
+            <p className="text-gray-400 max-w-md mx-auto">
+              Your trusted destination for elegant ethnic and modern fashion
+            </p>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-400 text-sm mb-4">
+              All designs and stitching depend on customer requirements.
+            </p>
+            <p className="text-gray-500 text-sm">
+              © 2026 Royal Ladies Boutique. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
-/* NAVBAR */
-nav{
-background:#d63384;
-padding:12px;
-text-align:center;
-position:sticky;
-top:0;
-}
-
-nav a{
-color:white;
-margin:8px;
-text-decoration:none;
-font-size:14px;
-}
-
-/* HERO */
-.hero{
-background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-padding:80px 15px;
-}
-
-.hero h1{
-font-size:28px;
-}
-
-.hero button{
-background:#ff69b4;
-border:none;
-padding:10px 20px;
-color:white;
-border-radius:20px;
-}
-
-/* SECTION */
-.section{
-padding:40px 15px;
-text-align:center;
-}
-
-/* SERVICES */
-.services{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-}
-
-.card{
-background:white;
-padding:15px;
-width:45%;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* GALLERY */
-.gallery{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-}
-
-/* FORM */
-form input, form textarea{
-width:90%;
-padding:10px;
-margin:10px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-/* FOOTER */
-footer{
-background:#d63384;
-color:white;
-text-align:center;
-padding:15px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:15px;
-right:15px;
-background:#25D366;
-color:white;
-padding:12px;
-border-radius:50%;
-}
-
-/* DESKTOP */
-@media(min-width:768px){
-.hero h1{font-size:40px;}
-.card{width:250px;}
-.gallery{grid-template-columns:repeat(3,1fr);}
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<div class="hero">
-<h1>Trending Beauty Salon</h1>
-<p>Beauty • Elegance • Confidence 💖</p>
-<button onclick="window.location.href='https://wa.me/919876543210'">Book Now</button>
-</div>
-
-<div id="services" class="section">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">Hair Styling</div>
-<div class="card">Facial</div>
-<div class="card">Bridal Makeup</div>
-<div class="card">Manicure</div>
-</div>
-</div>
-
-<div id="gallery" class="section">
-<h2>Our Work</h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<img src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4">
-<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
-</div>
-</div>
-
-<div class="section">
-<h2>Book Appointment</h2>
-
-<form onsubmit="sendToWhatsApp(); return false;">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="text" id="service" placeholder="Service" required>
-<textarea id="msg" placeholder="Message"></textarea>
-<button type="submit">Send</button>
-</form>
-
-</div>
-
-<div id="contact" class="section">
-<h2>Contact</h2>
-<p>📞 +91 12345 54321</p>
-<p>📍 Your Salon Address</p>
-
-<iframe src="https://maps.google.com/maps?q=delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="90%" height="200"></iframe>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/911234554321">💬</a>
-
-<footer>
-© 2026 Trending Beauty Salon
-</footer>
-
-<script>
-function sendToWhatsApp(){
-var name=document.getElementById("name").value;
-var service=document.getElementById("service").value;
-var msg=document.getElementById("msg").value;
-
-var url="https://wa.me/919876543210?text="
-+"Name: "+name+"%0aService: "+service+"%0aMessage: "+msg;
-
-window.open(url,'_blank');
-}
-</script>
-
-</body>
+export default App;
+ <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
